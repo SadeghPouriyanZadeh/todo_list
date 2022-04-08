@@ -11,19 +11,16 @@
     />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/bulmaswatch/superhero/bulmaswatch.min.css"
+      href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css"
     />
   </head>
 
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item">
-          <img
-            src="logo.png"
-
-          />
-        </a>
+        <div class="navbar-item">
+          <span class="tag is-primary">Sadegh Pouriyan Zadeh</span>
+        </div>
 
         <a
           role="button"
@@ -40,11 +37,30 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="https://sadeghpouriyanzadeh.github.io/todo_list/"> Home </a>
+          <a
+            class="navbar-item"
+            href="https://sadeghpouriyanzadeh.github.io/todo_list/"
+          >
+            Home
+          </a>
 
           <a class="navbar-item"> Portfolio </a>
           <a class="navbar-item"> Contact Me </a>
-          <a class="navbar-item"> Dark Mode/Light Mode </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Themes </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> Default </a>
+              <a class="navbar-item"> Lumen </a>
+              <a class="navbar-item"> Materia </a>
+              <a class="navbar-item"> Pulse </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Darkly </a>
+              <a class="navbar-item"> Cyborg </a>
+              <a class="navbar-item"> Slate </a>
+              <a class="navbar-item"> Superhero </a>
+            </div>
+          </div>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> All Projects </a>
@@ -62,6 +78,7 @@
 
         <div class="navbar-end">
           <div class="navbar-item">
+            
             <div class="buttons">
               <a class="button is-primary">
                 <strong>Sign up</strong>
@@ -88,6 +105,7 @@
       </div>
     </div>
 
+    
     <div class="columns">
       <div class="column is-four-fifths">
         <div class="content">
