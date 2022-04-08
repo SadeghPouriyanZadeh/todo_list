@@ -1,8 +1,13 @@
-import bulmaCalendar from "/node_modules/bulma-extensions/bulma-calendar/dist/bulma-calendar.min.js";
-
-let btn = document.getElementById("addButton");
+let addButton = document.getElementById("addButton");
 let list = document.getElementById("todoList");
 let todoTextBox = document.getElementById("todoTextBox");
+let removeButton = document.getElementById("removeButton");
+let changeModeButton = document.getElementById("changeModeButton");
+let isNight = true;
+let themeLink = document.getElementById("bulmaswatch-css");
+console.log(themeLink.href);
+let lightThemeHref = "https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css";
+let darkThemeHref = "https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css";
 
 function addItem(e) {
   let content = todoTextBox.value;
@@ -14,6 +19,25 @@ function addItem(e) {
   }
 }
 
+function deleteItem(e) {
+  let item = e.target;
+  list.removeChild(item);
+}
+
+function changeMode(e) {
+  if (isNight) {
+    isNight = false;
+    changeModeButton.innerHTML = "🌙";
+
+    themeLink.href = lightThemeHref;
+  } else {
+    isNight = true;
+    changeModeButton.innerHTML = "☀";
+
+    themeLink.href = darkThemeHref;
+  }
+}
+
 function handleKeyPress(e) {
   if (e.keyCode === 13) {
     addItem();
@@ -21,4 +45,7 @@ function handleKeyPress(e) {
 }
 
 todoTextBox.addEventListener("keypress", handleKeyPress);
-btn.addEventListener("click", addItem);
+addButton.addEventListener("click", addItem);
+list.addEventListener("click", deleteItem);
+removeButton.addEventListener("click", deleteItem);
+changeModeButton.addEventListener("click", changeMode);
